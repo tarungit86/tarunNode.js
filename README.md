@@ -31,4 +31,4 @@ npm start         # Production
 
 ## Tech Stack
 
-Express, MongoDB, JWT, Bcrypt, Multer, Nodemailer
+Express, MongoDB, JWT, Bcrypt, Multer, Nodemailer# tarunNode.js
