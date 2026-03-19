@@ -1,4 +1,3 @@
-
 // server.js
 const express = require("express");
 const serverless = require("serverless-http");
@@ -18,10 +17,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/user", userRoutes);
 app.use("/api/shop", shopRoutes);
 
-// Root route
+// Root route (UPDATED with log for demo)
 app.get("/", (req, res) => {
-  res.json({ message: "E-MART Lambda server running!" });
+  console.log("🔥 Lambda API HIT SUCCESS");   // 👈 added for logs
+  res.json({ message: "E-MART Lambda server running 🚀" }); // 👈 improved message
 });
 
-// Export Lambda handler
+// Health check route (NEW - useful for testing)
+app.get("/health", (req, res) => {
+  console.log("✅ Health check endpoint hit");
+  res.json({ status: "OK" });
+});
+
+// Export Lambda handler (ALREADY CORRECT)
 module.exports.handler = serverless(app);
